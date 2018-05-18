@@ -67,8 +67,8 @@ for file in FILES:
 	# Adds the filename and the CDDs to the dictionary
 	DATA['FILE_NAME'].append(file)
 	for i in range(len(THRESHOLDS)):			
-		DATA['CDD'+str(THRESHOLDS[i])+'_DRY'].append(cdd_dry[i])
-		DATA['CDD'+str(THRESHOLDS[i])+'_WET'].append(cdd_wet[i])
+		DATA['CDD'+str(THRESHOLDS[i])+'_DRY'].append(cdd_dry[i]/24)
+		DATA['CDD'+str(THRESHOLDS[i])+'_WET'].append(cdd_wet[i]/24)
 
 # Turns de DATA as a pandas' Data Frame
 output = pandas.DataFrame(DATA)

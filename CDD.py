@@ -1,5 +1,5 @@
 '''
-Calculates CDD for different temperature thresholds defined
+Calculates CDD or CDH for different temperature thresholds defined
 '''
 
 import glob

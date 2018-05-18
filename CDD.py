@@ -12,6 +12,14 @@ MIN_THRESHOLD = 15
 MAX_THRESHOLD = 22
 THRESHOLDS = list(range(MIN_THRESHOLD, MAX_THRESHOLD+1))
 
+# Allows to switch to CDH (Cooling Degree Hours)
+CDH = True
+
+if CDH:
+	cdh = 1
+else:
+	cdh = 24
+
 # Lists weather files in folder
 FILES = glob.glob('*.epw')
 #print(FILES)
@@ -67,8 +75,8 @@ for file in FILES:
 	# Adds the filename and the CDDs to the dictionary
 	DATA['FILE_NAME'].append(file)
 	for i in range(len(THRESHOLDS)):			
-		DATA['CDD'+str(THRESHOLDS[i])+'_DRY'].append(cdd_dry[i]/24)
-		DATA['CDD'+str(THRESHOLDS[i])+'_WET'].append(cdd_wet[i]/24)
+		DATA['CDD'+str(THRESHOLDS[i])+'_DRY'].append(cdd_dry[i]/cdh)
+		DATA['CDD'+str(THRESHOLDS[i])+'_WET'].append(cdd_wet[i]/cdh)
 
 # Turns de DATA as a pandas' Data Frame
 output = pandas.DataFrame(DATA)

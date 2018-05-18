@@ -5,4 +5,4 @@ The thresholds are difined by the global variable "THRESHOLDS", wich is a list o
 
 ## CDH
 
-If the intention is to get the value for CDH, you can set the global variable "CDH" as True.
+If the intention is to get the value for CDH (Cooling Degree Hours), you can set the global variable "CDH" as True.
